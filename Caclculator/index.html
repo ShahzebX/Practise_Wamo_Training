@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="calculator-app">
+      <h1>Calculator</h1>
+
+      <!-- Display and input section -->
+      <section class="display-section">
+        <div class="output-display" id="outputDisplay">0.0000</div>
+        <input
+          id="expressionInput"
+          type="text"
+          placeholder="Enter expression (e.g., 2 + 3 * sqrt(9))"
+          autocomplete="off"
+        />
+      </section>
+
+      <!-- Keyboard section -->
+      <section class="keypad-section" id="keypad">
+        <!-- Functions and Constants -->
+        <button data-action="insert" data-value="sqrt(">sqrt</button>
+        <button data-action="insert" data-value="sin(">sin</button>
+        <button data-action="insert" data-value="cos(">cos</button>
+        <button data-action="insert" data-value="tan(">tan</button>
+        <button data-action="insert" data-value="^">^</button>
+
+        <button data-action="insert" data-value="(">(</button>
+        <button data-action="insert" data-value=")">)</button>
+        <button data-action="insert" data-value="pi">pi</button>
+        <button data-action="insert" data-value="e">e</button>
+        <button data-action="clear">C</button>
+
+        <!-- Numbers and Basic Operations -->
+        <button data-action="insert" data-value="7">7</button>
+        <button data-action="insert" data-value="8">8</button>
+        <button data-action="insert" data-value="9">9</button>
+        <button data-action="insert" data-value="/">/</button>
+        <button data-action="backspace">⌫</button>
+
+        <button data-action="insert" data-value="4">4</button>
+        <button data-action="insert" data-value="5">5</button>
+        <button data-action="insert" data-value="6">6</button>
+        <button data-action="insert" data-value="*">*</button>
+        <button data-action="calculate">=</button>
+
+        <button data-action="insert" data-value="1">1</button>
+        <button data-action="insert" data-value="2">2</button>
+        <button data-action="insert" data-value="3">3</button>
+        <button data-action="insert" data-value="-">-</button>
+
+        <span class="empty-cell"></span>
+
+        <button data-action="insert" data-value="0">0</button>
+        <button data-action="insert" data-value=".">.</button>
+        <button data-action="insert" data-value="+">+</button>
+      </section>
+
+      <!-- Variable manager section -->
+      <section class="variable-section">
+        <h2>Variables</h2>
+        <div class="variable-form">
+          <input
+            type="text"
+            id="varNameInput"
+            placeholder="Name (e.g., dozen)"
+          />
+          <input
+            type="number"
+            id="varValueInput"
+            placeholder="Value (e.g., 12)"
+          />
+          <button id="addVarBtn" type="button">Add</button>
+        </div>
+        <ul class="variable-list" id="variableList"></ul>
+      </section>
+
+      <!-- History section -->
+      <section class="history-section">
+        <h2>History</h2>
+
+        <ul class="history-list" id="historyList"></ul>
+      </section>
+    </main>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
